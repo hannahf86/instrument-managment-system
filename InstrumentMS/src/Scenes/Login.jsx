@@ -14,17 +14,6 @@ const Login = () => {
         button: 'bg-zinc-800 text-white px-4 py-2 rounded-lg',
     }
 
-    const mobileStyles = {
-
-    }
-
-    const tabletStyles = {
-
-    }
-
-    const desktopStyles = {
-
-    }
 
     return (
         <div className={styles.background}>
