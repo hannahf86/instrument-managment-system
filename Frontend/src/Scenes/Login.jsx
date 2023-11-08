@@ -1,6 +1,9 @@
 // REACT
 import React, { useState } from 'react'
 
+// REACT ROUTER DOM
+import { useNavigate } from 'react-router-dom'
+
 // LIBRARIES
 import axios from 'axios'
 
@@ -18,6 +21,11 @@ const Login = () => {
         button: 'bg-zinc-800 text-white px-4 py-2 rounded-lg',
     }
 
+    const navigate = useNavigate();
+
+    // const [error, setError] = useState(null)
+    axios.defaults.withCredentials = true;
+
     // store and handle email and password
     const [values, setValues] = useState({
         email: '',
@@ -34,9 +42,11 @@ const Login = () => {
 
     const handleForm = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:5173/auth/adminlogin')
-            .then(result => console.log(result))
-            .catch(err => console.log(err));
+        axios.post('http://localhost:5173/auth/adminlogin', values)
+            .then(result => {
+                navigate('/dashboard')
+            })
+            .catch(err => console.log(err))
     }
 
     return (

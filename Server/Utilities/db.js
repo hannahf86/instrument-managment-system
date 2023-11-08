@@ -14,3 +14,5 @@ con.connect(function (err,) {
         console.log("You are connected to the database :)")
     }
 })
+
+export default con;
