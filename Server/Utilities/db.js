@@ -1,17 +1,17 @@
-import mysql from 'mysql';
+import mysql from 'mysql'
 
 const con = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'employeems'
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "employeems"
 })
 
-con.connect(function (err,) {
-    if (err) {
-        console.log("There was a problem connection to the database :(")
+con.connect(function(err) {
+    if(err) {
+        console.log("connection error")
     } else {
-        console.log("You are connected to the database :)")
+        console.log("Connected")
     }
 })
 
